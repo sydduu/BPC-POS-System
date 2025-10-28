@@ -1,0 +1,32 @@
+:root{
+  --teal: #0f7b4e;
+  --muted: #6b7280;
+  --card-bg: #f6f7f8;
+}
+
+.room-tables-page{ display:flex; min-height:100vh; background: linear-gradient(180deg,#f5f7f8 0%, #eef2f4 100%); font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; }
+
+.room-main{ flex:1; padding: 28px 36px; }
+.room-header h1{ font-size:28px; margin:0; color:#0b2030 }
+.room-header .subtitle{ color:var(--muted); margin-top:6px; margin-bottom:18px }
+
+.room-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px; align-items:start }
+
+.room-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.92));
+  border-radius:12px; padding:14px; box-shadow: 0 8px 20px rgba(12,20,28,0.06);
+  border:1px solid rgba(12,20,28,0.03); display:flex; flex-direction:column; gap:10px;
+}
+.room-card-top{ display:flex; align-items:center; gap:10px }
+.room-icon{ width:38px; height:38px; display:grid; place-items:center; font-size:18px; background:rgba(0,0,0,0.03); border-radius:8px }
+.room-title{ font-weight:700; color:#072018 }
+.room-badge{ margin-left:auto; padding:6px 8px; border-radius:999px; font-weight:700; font-size:12px }
+.room-badge.available{ background: linear-gradient(90deg,#e6f8f3,#c9f1e6); color:var(--teal) }
+.room-badge.occupied{ background: linear-gradient(90deg,#fff3e6,#ffe8c4); color:#b56a00 }
+
+.room-meta{ color:var(--muted); font-size:13px }
+.room-price{ color:var(--teal); font-weight:800; font-size:16px }
+.room-actions{ margin-top:auto; display:flex; gap:8px }
+.btn-edit{ background:transparent; border:1px solid rgba(12,20,28,0.06); padding:8px 12px; border-radius:10px; cursor:pointer }
+
+@media (max-width:880px){ .room-main{ padding:20px } .room-grid{ gap:12px } }

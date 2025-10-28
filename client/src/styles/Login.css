@@ -1,0 +1,156 @@
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  background: linear-gradient(135deg, #072d13 0%, #0f5130 50%, #9ad67a 100%);
+  font-family: "Poppins", system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Card wrapper: glass grid */
+.login-card {
+  width: 920px;
+  max-width: 96vw;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(10px) saturate(115%);
+  box-shadow: 0 12px 36px rgba(3, 24, 16, 0.45);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Left side (visual/branding) */
+.login-left {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+
+.login-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(60deg, rgba(13,86,54,0.12), rgba(5,35,20,0.16));
+  pointer-events: none;
+}
+
+.login-logo {
+  width: 78%;
+  max-width: 280px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(2, 18, 12, 0.45);
+  position: relative;
+  z-index: 2;
+}
+
+.brand-caption {
+  position: absolute;
+  bottom: 18px;
+  left: 22px;
+  z-index: 3;
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+  background: rgba(0,0,0,0.18);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* Right side (form) */
+.login-right {
+  padding: 40px 44px;
+  color: #072018;
+  background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.82));
+}
+
+.login-right h2 {
+  font-weight: 700;
+  text-align: left;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.2px;
+  color: #04221a;
+  font-size: 22px;
+}
+
+.subtitle {
+  text-align: left;
+  font-size: 14px;
+  color: #3b5950;
+  margin-bottom: 18px;
+}
+
+/* Form layout */
+.login-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+}
+
+.login-form .full { grid-column: 1 / -1; }
+
+.login-form label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #1f3b33;
+}
+
+.login-form input,
+.login-form select {
+  padding: 12px;
+  margin-bottom: 0;
+  border: 1px solid rgba(11,32,24,0.08);
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: #072018;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-form input:focus,
+.login-form select:focus {
+  box-shadow: 0 8px 28px rgba(14,112,74,0.08);
+  border-color: rgba(14,112,74,0.18);
+}
+
+/* Options row */
+.form-foot { grid-column: 1 / -1; display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
+.small-link { color:#2f6b53; font-size:13px; text-decoration:underline; cursor:pointer; }
+
+/* Login button */
+.login-btn {
+  grid-column: 1 / -1;
+  background: linear-gradient(90deg, #0f7b4e, #0b6b44);
+  border: none;
+  padding: 14px 16px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 12px 28px rgba(11,107,68,0.18);
+}
+
+.login-btn:hover { transform: translateY(-3px); }
+
+/* Responsive adjustments */
+@media (max-width: 880px) {
+  .login-card { grid-template-columns: 1fr; }
+  .login-right { padding: 28px; }
+  .login-left { padding: 20px; }
+  .login-form { grid-template-columns: 1fr; }
+  .login-logo { max-width: 340px; }
+}
+
+@media (max-width: 480px) {
+  .login-right { padding: 20px; }
+  .login-btn { padding: 12px; }
+}

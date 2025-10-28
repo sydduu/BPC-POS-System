@@ -1,0 +1,105 @@
+/* LandingPage.css - styles for the BPC Hotel landing page */
+:root {
+  --teal: #15979f;
+  --teal-dark: #0f7b80;
+  --muted: #6b7280;
+  --bg-a: #eaf6f6;
+  --bg-b: #fff6f4;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, var(--bg-a) 0%, var(--bg-b) 100%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #0f1724;
+  padding: 3rem 1rem;
+}
+
+.landing-content {
+  max-width: 720px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem;
+}
+
+.landing-logo {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 1.25rem auto;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(10, 30, 40, 0.12);
+}
+
+.icon-svg { display: block; }
+
+.landing-title {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0.4rem 0 0.6rem 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0b2030;
+}
+
+.landing-subtitle {
+  margin: 0 0 1.6rem 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.landing-actions { display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+  box-shadow: 0 8px 18px rgba(21, 151, 159, 0.18);
+}
+
+.btn-primary:hover { filter: brightness(0.98); }
+
+.btn-ghost {
+  background: #fff;
+  color: #0b2030;
+  border: 1px solid rgba(11,32,48,0.08);
+  box-shadow: 0 6px 14px rgba(12,20,28,0.04);
+}
+
+.landing-credits {
+  margin-top: 1.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .landing-content { padding: 2rem 1rem; }
+  .landing-title { font-size: 2.1rem; }
+  .landing-logo { width: 72px; height: 72px; border-radius: 12px; }
+  .landing-actions { flex-direction: column; gap: 0.75rem; }
+  .btn { width: 100%; }
+}

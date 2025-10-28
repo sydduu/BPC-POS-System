@@ -1,0 +1,205 @@
+.register-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #072d13 0%, #0f5130 50%, #9ad67a 100%);
+  font-family: "Poppins", system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Main card container: glass effect with grid columns */
+.register-card {
+  width: 920px;
+  max-width: 96vw;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(10px) saturate(120%);
+  box-shadow: 0 12px 40px rgba(4, 22, 16, 0.45);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Left side (visual) */
+.register-left {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+}
+
+.register-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(60deg, rgba(13,86,54,0.15), rgba(5,35,20,0.18));
+  pointer-events: none;
+}
+
+.register-logo {
+  width: 78%;
+  max-width: 260px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(2, 18, 12, 0.45);
+  position: relative;
+  z-index: 2;
+}
+
+.left-tag {
+  position: absolute;
+  bottom: 18px;
+  left: 22px;
+  z-index: 3;
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+  background: rgba(0,0,0,0.18);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* Right side (form) */
+.register-right {
+  padding: 40px 44px;
+  color: #072018;
+  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.78));
+}
+
+.register-right h2 {
+  font-weight: 700;
+  text-align: left;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.2px;
+  color: #04221a;
+  font-size: 22px;
+}
+
+.subtitle {
+  text-align: left;
+  font-size: 14px;
+  color: #3b5950;
+  margin-bottom: 20px;
+}
+
+/* Tabs - pill style */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tab {
+  background: rgba(6, 44, 22, 0.04);
+  border: 1px solid rgba(6,44,22,0.06);
+  color: #0b2f23;
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: all 180ms ease;
+}
+
+.tab.active {
+  background: linear-gradient(90deg, #0f7b4e, #0b6b44);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(9,79,54,0.12);
+}
+
+/* Form grid */
+.register-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 16px;
+  align-items: start;
+}
+
+.register-form .full {
+  grid-column: 1 / -1;
+}
+
+.register-form label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #1f3b33;
+  display: block;
+}
+
+.register-form input,
+.register-form select,
+.register-form textarea {
+  padding: 12px 12px;
+  border: 1px solid rgba(11,32,24,0.08);
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: #072018;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.register-form textarea { min-height: 110px; resize: vertical; }
+
+.register-form input:focus,
+.register-form select:focus,
+.register-form textarea:focus {
+  box-shadow: 0 8px 28px rgba(14,112,74,0.08);
+  border-color: rgba(14,112,74,0.18);
+}
+
+/* Helper / small text */
+.hint {
+  grid-column: 1 / -1;
+  font-size: 12px;
+  color: #577a6d;
+  margin-top: -4px;
+  margin-bottom: 8px;
+}
+
+/* Button */
+.register-btn {
+  grid-column: 1 / -1;
+  background: linear-gradient(90deg, #0f7b4e, #0b6b44);
+  border: none;
+  padding: 14px 16px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 12px 28px rgba(11,107,68,0.18);
+}
+
+.register-btn:hover { transform: translateY(-3px); }
+
+/* Small link row */
+.form-foot {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #3b5950;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .register-card { grid-template-columns: 1fr; }
+  .register-right { padding: 28px; }
+  .register-left { padding: 20px; }
+  .register-form { grid-template-columns: 1fr; }
+  .register-logo { max-width: 340px; }
+}
+
+@media (max-width: 480px) {
+  .register-right { padding: 20px; }
+  .register-title { font-size: 18px; }
+  .register-btn { padding: 12px; }
+}
+

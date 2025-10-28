@@ -1,0 +1,80 @@
+/* Sidebar.css - left navigation matching green glass theme */
+/* small reset to ensure the sidebar sits flush to the viewport */
+html, body { margin: 0; padding: 0; height: 100%; }
+.app-sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f7b4e 0%, #0b6b44 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px 14px; /* slightly smaller padding to tighten top/bottom */
+  box-shadow: 6px 0 24px rgba(2, 18, 12, 0.16);
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(2,18,12,0.28);
+}
+
+.brand-text {
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.brand-text strong { font-size: 13px; }
+.brand-text small { font-size: 11px; opacity: 0.9; }
+
+.sidebar-   nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  display: flex;
+  gap: 10px; /* slightly tighter gap between icon and label */
+  align-items: center;
+  padding: 8px 12px; /* reduce vertical padding so items are closer */
+  border-radius: 10px;
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  transition: background 160ms ease, transform 120ms ease;
+}
+
+.nav-item .nav-icon { display: inline-flex; align-items:center; justify-content:center; color: rgba(255,255,255,0.95); }
+.nav-item .nav-label { font-weight: 600; font-size: 13px; }
+
+.nav-item:hover { background: rgba(255,255,255,0.05); transform: translateY(-1px); }
+
+.nav-item.active {
+  background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.04);
+}
+
+.sidebar-footer { margin-top: 18px; }
+.logout-btn {
+  display:flex; align-items:center; gap:10px; width:100%; padding:10px 12px; border-radius:10px; border: none;
+  background: rgba(0,0,0,0.06); color: #fff; cursor:pointer; font-weight:600;
+}
+.logout-btn svg { color: #fff; }
+
+/* Compact / responsive: collapse labels on narrow screens */
+@media (max-width: 860px) {
+  .app-sidebar { width: 72px; padding: 14px 8px; }
+  .brand-text { display:none; }
+  .nav-item { justify-content: center; padding: 10px; }
+  .nav-item .nav-label { display:none; }
+  .logout-btn .nav-label { display:none; }
+}

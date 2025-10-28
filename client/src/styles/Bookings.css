@@ -1,0 +1,218 @@
+:root {
+  --teal: #0f7b4e;
+  --muted: #6b7280;
+  --card-bg: #f6f7f8;
+}
+
+.bookings-page {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(180deg,#f5f7f8 0%, #eef2f4 100%);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+
+.bookings-main {
+  flex: 1;
+  padding: 28px 36px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  margin: 0;
+  color: #0b2030;
+}
+
+.page-header .subtitle {
+  color: var(--muted);
+  margin-top: 6px;
+  margin-bottom: 18px;
+}
+
+.booking-container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 18px;
+  align-items: start;
+}
+
+.form-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.92));
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 8px 20px rgba(12,20,28,0.06);
+  border: 1px solid rgba(12,20,28,0.03);
+}
+
+.form-card h2 {
+  margin: 0 0 18px 0;
+  font-size: 20px;
+  color: #072018;
+  font-weight: 700;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  background: white;
+  border: 1px solid rgba(12,20,28,0.06);
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: #072018;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 2px rgba(15,123,78,0.1);
+}
+
+.form-group input::placeholder {
+  color: var(--muted);
+}
+
+.form-group select option {
+  background: white;
+  color: #072018;
+}
+
+.form-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn-submit,
+.btn-cancel {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-submit {
+  background: var(--teal);
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-submit:hover {
+  background: #0a6940;
+}
+
+.btn-cancel {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(12,20,28,0.06);
+}
+
+.btn-cancel:hover {
+  background: var(--card-bg);
+}
+
+.booking-summary {
+  background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.92));
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 8px 20px rgba(12,20,28,0.06);
+  border: 1px solid rgba(12,20,28,0.03);
+  position: sticky;
+  top: 28px;
+}
+
+.booking-summary h2 {
+  margin: 0 0 14px 0;
+  font-size: 18px;
+  color: #072018;
+  font-weight: 700;
+}
+
+.summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.summary-row span {
+  color: var(--muted);
+}
+
+.summary-row strong {
+  color: #072018;
+  font-weight: 600;
+}
+
+.summary-row.total {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(12,20,28,0.06);
+}
+
+.total-price {
+  font-size: 18px;
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.summary-note {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(12,20,28,0.06);
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .booking-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 880px) {
+  .bookings-main {
+    padding: 20px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
